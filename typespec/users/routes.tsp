@@ -1,6 +1,9 @@
 import "@typespec/http";
 import "./models.tsp";
-import "../common/models.tsp";
+import "../common/errors.tsp";
+import "../common/responses.tsp";
+import "../common/parameters.tsp";
+import "../common/headers.tsp";
 
 using TypeSpec.Http;
 

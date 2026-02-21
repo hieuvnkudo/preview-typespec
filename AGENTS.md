@@ -40,13 +40,16 @@ pnpm lint && pnpm lint:fix && pnpm format
 ### File Organization
 ```
 typespec/
-├── main.tsp           # Entry point, imports all modules
-├── tspconfig.yaml     # Emitter config (openapi3)
-├── common/
-│   └── models.tsp     # Shared models (Error, etc.)
-└── [feature]/
-    ├── models.tsp     # Domain models
-    └── routes.tsp     # API routes
+├── main.tsp                    # Entry point, imports all modules
+├── tspconfig.yaml              # Emitter config (openapi3)
+├── common/                     # Shared resources
+│   ├── errors.tsp             # Error models (Error, ValidationError, etc.)
+│   ├── responses.tsp          # Response wrappers (PagedResponse, ApiResponse)
+│   ├── parameters.tsp         # Common parameters (pagination, headers)
+│   └── headers.tsp            # Authentication headers
+└── [feature]/                 # Feature-based organization
+    ├── models.tsp             # Domain models
+    └── routes.tsp             # API routes
 ```
 
 ### Naming Conventions

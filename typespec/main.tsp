@@ -1,7 +1,10 @@
 import "@typespec/http";
 
 // Import common
-import "./common/models.tsp";
+import "./common/errors.tsp";
+import "./common/responses.tsp";
+import "./common/parameters.tsp";
+import "./common/headers.tsp";
 
 // Import features
 import "./pets/models.tsp";
