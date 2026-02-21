@@ -1,7 +1,21 @@
 import "@typespec/http";
-import "./src/widgets/models.tsp";
-import "./src/widgets/routes.tsp";
 
-using Http;
-@service(#{ title: "Widget Service" })
-namespace DemoService;
+// Import common
+import "./common/models.tsp";
+
+// Import features
+import "./pets/models.tsp";
+import "./pets/routes.tsp";
+
+import "./users/models.tsp";
+import "./users/routes.tsp";
+
+import "./store/models.tsp";
+import "./store/routes.tsp";
+
+using TypeSpec.Http;
+
+@service(#{ title: "Pet Store API" })
+@server("https://api.petstore.com", "Production")
+@server("https://staging.petstore.com", "Staging")
+namespace PetStore;
